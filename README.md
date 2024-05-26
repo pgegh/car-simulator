@@ -62,6 +62,8 @@ In this project we prioritize readability and scalability over performance.
 - Some data structures might seem redundant. But they were created to make future implementations easier. One such
   example is the data structure of the car type `enum CarType`, although we only have one type of car this data
   structure will make it easy to add new types of car in the future.
+- Data input and output functionalities were isolated into specialized functions. This will make future implementations
+  of other input output methods easier.
 
 ### Weaknesses
 
