@@ -9,4 +9,6 @@ add_executable(car-simulator main.c
         room.h
         room.c
         simulation.h
-        simulation.c)
+        simulation.c
+        spatial.h
+        spatial.c)
