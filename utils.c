@@ -2,9 +2,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 
 void _flush();
+
+bool _is_faulty_commands_string(const char *string);
+
 
 RoomSize_T get_room_size() {
     printf("Provide the room size as two integers separated with a space in the"
@@ -25,6 +29,7 @@ RoomSize_T get_room_size() {
 
     return create_room_size((unsigned int) room_x_size, (unsigned int) room_y_size);
 }
+
 
 PositionDirection_T get_car_start_position_and_direction(const RoomSize_T *const room_size) {
     // Empties the input buffer before requesting a new input
@@ -80,7 +85,38 @@ PositionDirection_T get_car_start_position_and_direction(const RoomSize_T *const
     return create_position_direction(position, direction);
 }
 
+
+void get_commands_string(char *commands_string) {
+    // Empties the input buffer before requesting a new input
+    _flush();
+
+    printf("Provide the command string. Characters {'F', 'B', 'L', 'R'} are "
+        "only accepted. The string should not contain any spaces.\n");
+
+    while (
+        scanf("%s", commands_string) != 1 ||
+        _is_faulty_commands_string(commands_string)
+    ) {
+        // Empty the input buffer before requesting a new input
+        _flush();
+
+        printf("Invalid input! The string either contains illegal charactars. Try again.\n");
+    }
+}
+
+
 void _flush() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
+}
+
+
+bool _is_faulty_commands_string(const char *string) {
+    const int len = strlen(string);
+
+    for (int i = 0; i < len; i++)
+        if (string[i] != 'F' && string[i] != 'B' && string[i] != 'L' && string[i] != 'R')
+            return true;
+
+    return false;
 }

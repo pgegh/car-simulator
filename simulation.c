@@ -17,7 +17,7 @@ void print_simulation_state_info(const Simulation_T *simulation) {
     printf("room size %dx%d,\n"
            "car type %d,  {0: Monster Truck}\n"
            "car location (%d, %d),\n"
-           "car direction %d,  {0: N, 1: E, 2: S, 3: W}\n"
+           "car direction %s,\n"
            "car speed %d,\n"
            "command string: %s.\n\n",
            simulation->room.room_size.x_size,
@@ -25,7 +25,7 @@ void print_simulation_state_info(const Simulation_T *simulation) {
            simulation->car.type,
            simulation->car.position.x_coordinate,
            simulation->car.position.y_coordinate,
-           simulation->car.direction,
+           dir_to_str(simulation->car.direction),
            simulation->car.speed,
            simulation->commands_string);
 }
