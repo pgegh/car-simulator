@@ -11,4 +11,6 @@ add_executable(car-simulator main.c
         simulation.h
         simulation.c
         spatial.h
-        spatial.c)
+        spatial.c
+        utils.h
+        utils.c)
