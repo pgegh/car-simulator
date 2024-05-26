@@ -53,6 +53,9 @@ The author of this code is Hovig Manjikian. The code was written with no AI aid.
   x-axis y-axis direction".
 - There is no upper limit specified for the dimensions and quantities. We assume that room sizes larger than 1'000'
   000'000 meter are unrealistic. And commands of string length longer than 1'000'000 are also unrealistic.
+- There is no specification of the minimum number of commands in a commands string. I assume the 0 commands, i.e. an
+  empty commands string is a valid command sequence. However, it is not supported by the current implementation.
+  Currently, a minimum of 1 command is needed.
 
 ### Design Choices
 
@@ -68,4 +71,13 @@ In this project we prioritize readability and scalability over performance.
 ### Weaknesses
 
 - The input functions are not as robust as I would wish. I have implemented some measures to handle faulty input, but it
-  is far from complete. One obvious weakness is when we input unrealistically large numbers.
+  is far from complete. One obvious weakness is when we input unrealistically large numbers. Another weakness in the
+  input fault handling is that the implementation will not complain on illegal input that is concatenated at the end of
+  a legal input.
+- A systematic thorough testing has not been done. The tests are only done on system-level. A lower level unit-tests are
+  missing.
+
+### Todo
+
+- Implement support for command sequences with zero commands in them.
+- Implement systematic and thorougher tests that include also unit-tests.

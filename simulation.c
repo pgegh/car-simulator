@@ -215,25 +215,25 @@ bool _move_car(Direction_E direction, Car_T *car, const Room_T *room) {
     switch (direction) {
         case North:
             temp_new_position = car->position.y_coordinate + car->speed;
-            if (temp_new_position > room->room_size.y_size)
+            if (temp_new_position >= room->room_size.y_size)
                 return false;
             car->position.y_coordinate = temp_new_position;
             break;
         case East:
             temp_new_position = car->position.x_coordinate + car->speed;
-            if (temp_new_position > room->room_size.x_size)
+            if (temp_new_position >= room->room_size.x_size)
                 return false;
             car->position.x_coordinate = temp_new_position;
             break;
         case South:
             temp_new_position = car->position.y_coordinate - car->speed;
-            if (temp_new_position < 1)
+            if (temp_new_position < 0)
                 return false;
             car->position.y_coordinate = temp_new_position;
             break;
         case West:
             temp_new_position = car->position.x_coordinate - car->speed;
-            if (temp_new_position < 1)
+            if (temp_new_position < 0)
                 return false;
             car->position.x_coordinate = temp_new_position;
             break;
