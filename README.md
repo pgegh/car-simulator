@@ -76,8 +76,11 @@ In this project we prioritize readability and scalability over performance.
   a legal input.
 - A systematic thorough testing has not been done. The tests are only done on system-level. A lower level unit-tests are
   missing.
+- Apart from the test cases all the project files are in the main directory. It will be much better if the project files
+  were reorganized so that the source files are moved into a dedicated `src/` directory.
 
 ### Todo
 
 - Implement support for command sequences with zero commands in them.
 - Implement systematic and thorougher tests that include also unit-tests.
+- Reorganize the files of the project into dedicated directories.
