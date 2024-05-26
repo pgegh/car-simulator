@@ -1,5 +1,8 @@
 #include "spatial.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+
 
 RoomSize_T create_room_size(const unsigned int x_size, const unsigned int y_size) {
     RoomSize_T new_room_size;
@@ -22,4 +25,20 @@ PositionDirection_T create_position_direction(const Position_T position, const D
     new_position_direction.direction = direction;
 
     return new_position_direction;
+}
+
+char *dir_to_str(Direction_E direction) {
+    switch (direction) {
+        case North:
+            return "North";
+        case East:
+            return "East";
+        case South:
+            return "South";
+        case West:
+            return "West";
+        default:
+            printf("Invalid enum!");
+            exit(1);
+    }
 }

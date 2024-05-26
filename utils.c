@@ -1,6 +1,7 @@
 #include "utils.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 
 
 void _flush();
@@ -23,6 +24,60 @@ RoomSize_T get_room_size() {
     }
 
     return create_room_size((unsigned int) room_x_size, (unsigned int) room_y_size);
+}
+
+PositionDirection_T get_car_start_position_and_direction(const RoomSize_T *const room_size) {
+    // Empties the input buffer before requesting a new input
+    // scanf("%*[^\n]");
+    _flush();
+
+    printf("Provide the start position and heading with format \"X Y D\" "
+        "where X is the position on the rooms width axis and Y on the rooms length "
+        "axis. D is the cardinal direction (the heading) givern as 'N', 'E', 'S', or"
+        " 'W' character.\n");
+    int position_x;
+    int position_y;
+    char direction_char;
+
+    while (
+        scanf("%d %d %c", &position_x, &position_y, &direction_char) != 3 ||
+        position_x <= 0 || position_x > room_size->x_size ||
+        position_y <= 0 || position_y > room_size->y_size ||
+        (direction_char != 'N' &&
+         direction_char != 'E' &&
+         direction_char != 'S' &&
+         direction_char != 'W')
+    ) {
+        // Empty the input buffer before requesting a new input
+        _flush();
+
+        printf("The input should have the format \"X Y D\" where X is the "
+            "position on the rooms width axis and Y on the rooms length axis. D is"
+            " the cardinal direction (the heading) givern as 'N', 'E', 'S', or 'W'"
+            " character.\n");
+    }
+
+    const Position_T position = create_position((unsigned int) position_x, (unsigned int) position_y);
+
+    Direction_E direction;
+    switch (direction_char) {
+        case 'N':
+            direction = North;
+            break;
+        case 'E':
+            direction = East;
+            break;
+        case 'S':
+            direction = South;
+            break;
+        case 'W':
+            direction = West;
+            break;
+        default:
+            printf("Something went wrong with the heading input.");
+            exit(1);
+    }
+    return create_position_direction(position, direction);
 }
 
 void _flush() {

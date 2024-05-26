@@ -34,5 +34,7 @@ typedef struct PositionDirection {
    Returns the position direction instance.  */
 PositionDirection_T create_position_direction(Position_T position, Direction_E direction);
 
+/* Converts direction enum to a string representations.  */
+char *dir_to_str(Direction_E direction);
 
 #endif //SPATIAL_H
