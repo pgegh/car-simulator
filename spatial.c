@@ -8,3 +8,18 @@ RoomSize_T create_room_size(const unsigned int x_size, const unsigned int y_size
 
     return new_room_size;
 }
+
+Position_T create_position(const unsigned int position_x, const unsigned int position_y) {
+    Position_T new_position;
+    new_position.x_coordinate = position_x;
+    new_position.y_coordinate = position_y;
+    return new_position;
+}
+
+PositionDirection_T create_position_direction(const Position_T position, const Direction_E direction) {
+    PositionDirection_T new_position_direction;
+    new_position_direction.position = position;
+    new_position_direction.direction = direction;
+
+    return new_position_direction;
+}
