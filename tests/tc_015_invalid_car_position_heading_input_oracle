@@ -1,0 +1,23 @@
+#########################################################
+####  WELCOME TO THE RADIO CONTROLLED CAR SIMULATOR  ####
+#########################################################
+
+Provide the room size in meters as two integers separated with a space in the format "WIDTH LENGTH" and then press enter.
+Provide the start position and heading with format "X Y D" where X is the position on the rooms width axis and Y on the rooms length axis. D is the cardinal direction (the heading) given as 'N', 'E', 'S', or 'W' character.
+The input should have the format "X Y D" where X is the position on the rooms width axis and Y on the rooms length axis. D is the cardinal direction (the heading) givern as 'N', 'E', 'S', or 'W' character.
+The input should have the format "X Y D" where X is the position on the rooms width axis and Y on the rooms length axis. D is the cardinal direction (the heading) givern as 'N', 'E', 'S', or 'W' character.
+The input should have the format "X Y D" where X is the position on the rooms width axis and Y on the rooms length axis. D is the cardinal direction (the heading) givern as 'N', 'E', 'S', or 'W' character.
+The input should have the format "X Y D" where X is the position on the rooms width axis and Y on the rooms length axis. D is the cardinal direction (the heading) givern as 'N', 'E', 'S', or 'W' character.
+The input should have the format "X Y D" where X is the position on the rooms width axis and Y on the rooms length axis. D is the cardinal direction (the heading) givern as 'N', 'E', 'S', or 'W' character.
+The input should have the format "X Y D" where X is the position on the rooms width axis and Y on the rooms length axis. D is the cardinal direction (the heading) givern as 'N', 'E', 'S', or 'W' character.
+The input should have the format "X Y D" where X is the position on the rooms width axis and Y on the rooms length axis. D is the cardinal direction (the heading) givern as 'N', 'E', 'S', or 'W' character.
+The input should have the format "X Y D" where X is the position on the rooms width axis and Y on the rooms length axis. D is the cardinal direction (the heading) givern as 'N', 'E', 'S', or 'W' character.
+Provide the command string. Characters {'F', 'B', 'L', 'R'} are only accepted. The string should not contain any spaces.
+Executing command L
+Executing command R
+
+The simulation has ran successfully. The car did not crash into any wall during the simulation. The final position of the car is (49, 49) and the car is heading South.
+
+#########################################################
+#############  The simulation has finished  #############
+#########################################################

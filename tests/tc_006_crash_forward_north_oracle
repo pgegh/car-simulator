@@ -1,0 +1,16 @@
+#########################################################
+####  WELCOME TO THE RADIO CONTROLLED CAR SIMULATOR  ####
+#########################################################
+
+Provide the room size in meters as two integers separated with a space in the format "WIDTH LENGTH" and then press enter.
+Provide the start position and heading with format "X Y D" where X is the position on the rooms width axis and Y on the rooms length axis. D is the cardinal direction (the heading) given as 'N', 'E', 'S', or 'W' character.
+Provide the command string. Characters {'F', 'B', 'L', 'R'} are only accepted. The string should not contain any spaces.
+Executing command F
+Executing command F
+Executing command F
+
+The simulation has ran successfully. However, the car has crashed into the wall. The crash happened when command number 3 was executed. The cars last position before the crash was (0, 2) and it was heading towards the North.
+
+#########################################################
+#############  The simulation has finished  #############
+#########################################################
