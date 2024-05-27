@@ -11,8 +11,8 @@ bool _is_faulty_commands_string(const char *string);
 
 
 RoomSize_T get_room_size() {
-    printf("Provide the room size as two integers separated with a space in the"
-        " format \"WIDTH LENGTH\" and then press enter.\n");
+    printf("Provide the room size in meters as two integers separated with a "
+        "space in the format \"WIDTH LENGTH\" and then press enter.\n");
     int room_x_size;
     int room_y_size;
 
@@ -38,7 +38,7 @@ PositionDirection_T get_car_start_position_and_direction(const RoomSize_T *const
 
     printf("Provide the start position and heading with format \"X Y D\" "
         "where X is the position on the rooms width axis and Y on the rooms length "
-        "axis. D is the cardinal direction (the heading) givern as 'N', 'E', 'S', or"
+        "axis. D is the cardinal direction (the heading) given as 'N', 'E', 'S', or"
         " 'W' character.\n");
     int position_x;
     int position_y;
@@ -46,8 +46,8 @@ PositionDirection_T get_car_start_position_and_direction(const RoomSize_T *const
 
     while (
         scanf("%d %d %c", &position_x, &position_y, &direction_char) != 3 ||
-        position_x <= 0 || position_x > room_size->x_size ||
-        position_y <= 0 || position_y > room_size->y_size ||
+        position_x < 0 || position_x >= room_size->x_size ||
+        position_y < 0 || position_y >= room_size->y_size ||
         (direction_char != 'N' &&
          direction_char != 'E' &&
          direction_char != 'S' &&
@@ -100,7 +100,7 @@ void get_commands_string(char *commands_string) {
         // Empty the input buffer before requesting a new input
         _flush();
 
-        printf("Invalid input! The string either contains illegal charactars. Try again.\n");
+        printf("Invalid input! The string either contains illegal characters. Try again.\n");
     }
 }
 
